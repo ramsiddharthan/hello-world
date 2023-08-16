@@ -1,0 +1,19 @@
+name: My-test
+on:
+  workflow_dispatch:
+    inputs:
+      sample:
+        type: choice
+        options:
+          - 'A'
+          - 'B'
+        description: Sample Data to test
+jobs:
+  build:
+    runs-on: [ self-hosted, copsapi ]
+    steps:
+      - name: Sample Test
+        if: github.event.inputs.sample == 'A'
+        run: echo "Hello"
+
+
