@@ -20,4 +20,6 @@ jobs:
       - name: Sample Test from script
         if: github.event.inputs.sample == 'B'
         run: |
+         chmod +x ./scripts/print.sh
          ./scripts/print.sh
+         shell: bash
