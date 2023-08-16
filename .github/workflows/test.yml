@@ -12,10 +12,12 @@ jobs:
   build:
     runs-on: ubuntu-latest 
     steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
       - name: Sample Test
         if: github.event.inputs.sample == 'A'
         run: echo "Hello"
       - name: Sample Test from script
         if: github.event.inputs.sample == 'B'
         run: |
-         scripts/print.sh
+         ./scripts/print.sh
