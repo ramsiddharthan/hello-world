@@ -15,3 +15,8 @@ jobs:
       - name: Sample Test
         if: github.event.inputs.sample == 'A'
         run: echo "Hello"
+      - name: Sample Test from script
+        if: github.event.inputs.sample == 'B'
+        run: |
+         ../../scripts/print.sh
+         shell: bash
