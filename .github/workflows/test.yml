@@ -18,4 +18,5 @@ jobs:
       - name: Sample Test from script
         if: github.event.inputs.sample == 'B'
         run: |
-         ../scripts/print.sh
+         cd ../../
+         scripts/print.sh
